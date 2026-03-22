@@ -1,10 +1,11 @@
-Pipelines{
+Pipeline{
     agent any
 
     stages {
-        stage('Build') {
+        stage('Maven Build') {
             steps {
-                echo 'Building...'
+                sh 'mvn clean'
+                sh 'mvn install'
                 // Add your build commands here
             }
         }
